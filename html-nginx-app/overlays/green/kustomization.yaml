@@ -1,7 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 resources:
-  - ../../blue-green-service.yaml
-  - ../../blue-green-ing.yaml
-  - ../../config-blue-green.yaml
-  - green-sts.yaml                # ✅ This now matches the moved file
-  - patch-service-green.yaml
+  - ../../base/green-sts.yaml
+  - ../../base/blue-green-service.yaml
+  - ../../base/blue-green-ing.yaml
+  - ../../base/config-blue-green.yaml
+
+patchesStrategicMerge:
+  - patch-green-service.yaml
 
