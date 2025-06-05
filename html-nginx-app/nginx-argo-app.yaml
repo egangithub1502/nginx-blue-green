@@ -1,15 +1,14 @@
-# nginx-argo-app.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-bluegreen-app
+  name: nginx-green
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/egangithub1502/nginx-blue-green.git
-    targetRevision: main
-    path: .
+    repoURL: 'https://github.com/egangithub1502/nginx-blue-green.git'
+    targetRevision: HEAD
+    path: overlays/green
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx
@@ -17,6 +16,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
 
