@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/egangithub1502/nginx-blue-green'
     targetRevision: HEAD
-    path: html-nginx-app/overlays/green
+    path: html-nginx-app
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx
