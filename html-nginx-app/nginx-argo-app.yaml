@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/egangithub1502/nginx-blue-green.git'
+    repoURL: 'https://github.com/egangithub1502/nginx-blue-green'
     targetRevision: HEAD
-    path: overlays/green
+    path: html-nginx-app/overlays/green
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx
