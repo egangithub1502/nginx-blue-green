@@ -1,7 +1,8 @@
 resources:
   - blue-green-ing.yaml
-  - blue-green-service.yaml
   - config-blue-green.yaml
   - blue-sts.yaml
   - green-sts.yaml
+  - nginx-service-blue.yaml
+  - nginx-service-green.yaml
 
