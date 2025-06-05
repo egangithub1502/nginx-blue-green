@@ -17,7 +17,7 @@ spec:
     name: http
   selector:
     app: nginx
-    color: blue   # Change this to green to switch traffic
+    color: green   # Change this to green to switch traffic
     enabled: "true"
   type: LoadBalancer
 
