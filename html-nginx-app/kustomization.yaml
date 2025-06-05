@@ -1,7 +1,0 @@
-resources:
-  - blue-green-service.yaml
-  - blue-green-ing.yaml
-  - config-blue-green.yaml
-  - blue-sts.yaml
-  - green-sts.yaml
-
