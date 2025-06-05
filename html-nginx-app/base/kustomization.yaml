@@ -1,10 +1,7 @@
-# html-nginx-app/html-nginx-app/base/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - green-sts.yaml
-  - nginx-service-green.yaml
   - blue-green-ing.yaml
   - config-blue-green.yaml
 

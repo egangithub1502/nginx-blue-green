@@ -3,6 +3,8 @@ kind: Kustomization
 
 resources:
   - ../../base
+  - blue-sts.yaml
+  - nginx-service-blue.yaml
 
 patchesStrategicMerge:
   - patch-ingress-blue.yaml

@@ -3,6 +3,8 @@ kind: Kustomization
 
 resources:
   - ../../base
+  - green-sts.yaml
+  - nginx-service-green.yaml
 
 patchesStrategicMerge:
   - patch-ingress-green.yaml
