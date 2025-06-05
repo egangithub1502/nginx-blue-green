@@ -4,24 +4,25 @@ metadata:
   name: nginx-ingress
   namespace: nginx
   annotations:
-    cloud.google.com/load-balancer-neg-ready: "true"
+    kubernetes.io/ingress.class: "gce"
     cloud.google.com/neg: '{"ingress": true}'
     networking.gke.io/v1beta1.FrontendConfig: "nginx-frontend-config"
     kubernetes.io/ingress.global-static-ip-name: "nginx-ingress-staticip"
 spec:
+  ingressClassName: gce  # optional, but replaces deprecated annotation
   tls:
-  - hosts:
-    - nginx-site.profit.net
-    secretName: profit-tls
+    - hosts:
+        - nginx-app.profit.net
+      secretName: profit-tls
   rules:
-  - host: nginx-app.profit.net
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx-service
-            port:
-              number: 80
+    - host: nginx-app.profit.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-service  # ✅ correct service name
+                port:
+                  number: 80
 

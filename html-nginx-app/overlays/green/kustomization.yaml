@@ -1,11 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
   - ../../base/green-sts.yaml
-  - ../../base/blue-green-service.yaml
+  - ../../base/nginx-service-green.yaml
   - ../../base/blue-green-ing.yaml
   - ../../base/config-blue-green.yaml
 
 patchesStrategicMerge:
-  - patch-green-service.yaml
+  - patch-ingress-green.yaml
 
