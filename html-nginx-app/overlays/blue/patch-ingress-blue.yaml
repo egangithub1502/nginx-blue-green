@@ -12,7 +12,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx-service-blue
+            name: nginx-service-blue     # <-- Matches the service name above
             port:
               number: 80
 

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service        
+  name: nginx-service-green         # <-- Updated service name to match Ingress backend
   namespace: nginx
   labels:
     app: nginx
@@ -17,7 +17,7 @@ spec:
     name: http
   selector:
     app: nginx
-    color: green             #  ✅ this is how blue/green switch happens
+    color: green                   # Select pods with label color=green
     enabled: "true"
   type: LoadBalancer
 

@@ -9,7 +9,7 @@ metadata:
     networking.gke.io/v1beta1.FrontendConfig: "nginx-frontend-config"
     kubernetes.io/ingress.global-static-ip-name: "nginx-ingress-staticip"
 spec:
-  ingressClassName: gce  # optional, but replaces deprecated annotation
+  ingressClassName: gce
   tls:
     - hosts:
         - nginx-app.profit.net
@@ -22,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: nginx-service  # ✅ correct service name
+                name: nginx-service-blue    # Make sure this service exists with this name
                 port:
                   number: 80
 
