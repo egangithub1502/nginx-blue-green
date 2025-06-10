@@ -22,7 +22,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: nginx-service-blue    # Make sure this service exists with this name
+                name: nginx-service   # <- Front service for traffic switching
                 port:
                   number: 80
-

@@ -3,7 +3,6 @@ kind: FrontendConfig
 metadata:
   name: nginx-frontend-config
   namespace: nginx
-
 spec:
   sslPolicy: nginx-ssl-security
   redirectToHttps:

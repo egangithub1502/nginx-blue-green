@@ -1,23 +1,22 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service-green         # <-- Updated service name to match Ingress backend
+  name: nginx-service-blue
   namespace: nginx
   labels:
     app: nginx
+    color: blue
     enabled: "true"
   annotations:
     cloud.google.com/neg: '{"ingress": true}'
     cloud.google.com/load-balancer-type: "Internal"
 spec:
-  ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    name: http
   selector:
     app: nginx
-    color: green                   # Select pods with label color=green
-    enabled: "true"
+    color: blue
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
   type: LoadBalancer
 

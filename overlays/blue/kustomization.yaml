@@ -1,6 +1,0 @@
-resources:
-  - ../../base
-
-patchesStrategicMerge:
-  - patch-service-blue.yaml
-
